@@ -1,0 +1,12 @@
+"""
+https://adventofcode.com/{YEAR}/day/{DAY}
+"""
+
+from typing import IO
+
+from aoc import puzzle
+
+
+@puzzle
+def day{DAY}(input: IO[str]):
+    ...
