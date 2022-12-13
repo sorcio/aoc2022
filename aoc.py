@@ -1,3 +1,4 @@
+from os import getenv
 from pathlib import Path
 from typing import IO, Callable
 import requests
@@ -30,7 +31,7 @@ def puzzle(f: Callable[[IO[str]], None]) -> None:
 
     print(f"AOC {year} puzzle {day}")
     print("Getting inputs...", end=" ", flush=True)
-    inputs = get_aoc_input(day, year)
+    inputs = get_aoc_input(day, year, use_example=bool(getenv("EXAMPLE")))
     print("done!")
     print("Running puzzle code...")
     print()
@@ -57,15 +58,18 @@ def _get_day_and_year_from_path(path: Path) -> tuple[int, int]:
     return day, year
 
 
-def get_aoc_input(puzzle: int, year: int) -> IO[str]:
+def get_aoc_input(puzzle: int, year: int, use_example: bool = False) -> IO[str]:
     INPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
     file_name = f"input_{year}_{puzzle}"
+    if use_example:
+        file_name += "_example"
     path = INPUTS_DIR / file_name
     try:
         return path.open("r")
     except FileNotFoundError:
-        pass
+        if use_example:
+            raise
 
     url = f"https://adventofcode.com/{year}/day/{puzzle}/input"
     response = get_aoc_url(url)
