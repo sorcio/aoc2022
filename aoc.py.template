@@ -13,4 +13,4 @@ def day{DAY}(input: IO[str]):
 
 
 if __name__ == "__main__":
-    day{day}.run_puzzle()
+    day{DAY}.run_puzzle()
