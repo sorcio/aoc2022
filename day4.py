@@ -35,3 +35,7 @@ def day4(input: IO[str]):
         if overlaps(range1, range2):
             counter_part_2 += 1
         print(range1, range2, counter, counter_part_2)
+
+
+if __name__ == "__main__":
+    day4.run_puzzle()

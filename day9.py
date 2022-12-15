@@ -86,3 +86,7 @@ def day9(input: IO[str]):
 
     # print(visited)
     print("visited:", len(visited))
+
+
+if __name__ == "__main__":
+    day9.run_puzzle()

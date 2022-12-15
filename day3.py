@@ -47,3 +47,7 @@ def day3(input: IO[str]):
             item_2_prio = prio(item_2)
             total_part_2 += item_2_prio
             print(f" {i:4d} {item_2} {item_2_prio} {total_part_2}")
+
+
+if __name__ == "__main__":
+    day3.run_puzzle()

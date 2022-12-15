@@ -72,3 +72,7 @@ def day12(input: IO[str]):
     print("part 1:", len(steps))
     hiking_steps = shortest_path(grid, end, None, -1)
     print("part 2:", len(hiking_steps))
+
+
+if __name__ == "__main__":
+    day12.run_puzzle()

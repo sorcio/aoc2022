@@ -66,3 +66,7 @@ def day11(input: IO[str]):
     print(counters)
     top2, top1 = sorted(counters)[-2:]
     print("monkey business:", top1 * top2)
+
+
+if __name__ == "__main__":
+    day11.run_puzzle()

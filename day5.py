@@ -50,3 +50,7 @@ def day5(input: IO[str]):
     
     print(stacks)
     print("".join(s[-1] for s in stacks))
+
+
+if __name__ == "__main__":
+    day5.run_puzzle()

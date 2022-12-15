@@ -70,3 +70,7 @@ def day7(input: IO[str]):
         if size >= to_free:
             print("part 2", size)
             break
+
+
+if __name__ == "__main__":
+    day7.run_puzzle()

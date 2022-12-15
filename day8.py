@@ -51,3 +51,7 @@ def day8(input: IO[str]):
             score = up * down * left * right
             best_score = max(score, best_score)
     print("part 2 solution", best_score)
+
+
+if __name__ == "__main__":
+    day8.run_puzzle()

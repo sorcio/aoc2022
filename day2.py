@@ -67,3 +67,7 @@ def day2(input: IO[str]):
         outcome_part_2 = PART2_OUTCOMES[match]
         total_score_part_2 += outcome_part_2
         print(match, outcome, total_score, outcome_part_2, total_score_part_2)
+
+
+if __name__ == "__main__":
+    day2.run_puzzle()

@@ -28,3 +28,7 @@ def day6(input: IO[str]):
     pos2, marker2 = find_marker(input, 14)
     print(f"second marker after {pos2} chars: {marker2}")
     print(f"absolute pos: {pos + pos2}")
+
+
+if __name__ == "__main__":
+    day6.run_puzzle()

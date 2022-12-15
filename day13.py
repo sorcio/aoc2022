@@ -71,3 +71,7 @@ def day13(input: IO[str]):
     index_2 = packets.index(DIV2, index_1) + 1
     print(f"{index_1=} {index_2=}")
     print("part 2:", index_1 * index_2)
+
+
+if __name__ == "__main__":
+    day13.run_puzzle()

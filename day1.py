@@ -28,3 +28,7 @@ def day1(input: IO[str]):
     summed = [*map(sum, elves)]
     summed.sort(reverse=True)
     print(sum(summed[:3]))
+
+
+if __name__ == "__main__":
+    day1.run_puzzle()

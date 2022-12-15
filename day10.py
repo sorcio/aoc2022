@@ -48,3 +48,7 @@ def day10(input: IO[str]):
 
     print()
     print("part 1:", total_value)
+
+
+if __name__ == "__main__":
+    day10.run_puzzle()
