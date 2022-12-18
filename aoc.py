@@ -2,6 +2,7 @@
 from functools import partial
 from os import getenv
 from pathlib import Path
+from time import perf_counter_ns
 from types import ModuleType
 from typing import IO, Callable, NoReturn, Protocol, cast, runtime_checkable
 import sys
@@ -32,13 +33,15 @@ def run_puzzle(
     print("Getting inputs...", end=" ", flush=True)
     if use_example is None:
         use_example = bool(getenv("EXAMPLE"))
-    inputs = get_aoc_input(day, year, use_example=use_example)
-    print("done!")
-    print("Running puzzle code...")
-    print()
-    f(inputs)
-    print()
-    print("All done.")
+    with get_aoc_input(day, year, use_example=use_example) as inputs:
+        print("done!")
+        print("Running puzzle code...")
+        print()
+        start_time = perf_counter_ns()
+        f(inputs)
+        run_time = perf_counter_ns() - start_time
+        print()
+        print(f"All done ({run_time / 1000000:g} ms).")
 
 
 def puzzle(f: PuzzleFunc) -> Puzzle:
